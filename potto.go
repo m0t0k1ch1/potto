@@ -11,7 +11,8 @@ type Args struct {
 	ksatriya.Args
 }
 
-type Action func(Ctx, Args) (*Response, error)
+type Action func(Ctx, ActionArgs) (*Response, error)
+type ActionArgs []string
 
 type Potto struct {
 	*ksatriya.Ksatriya

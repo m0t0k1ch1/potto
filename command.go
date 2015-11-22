@@ -8,7 +8,7 @@ import (
 
 type Command struct {
 	Name string
-	Args Args
+	Args ActionArgs
 }
 
 func NewCommand(text, trigger string) *Command {
