@@ -14,15 +14,10 @@ type Ctx interface {
 type CtxBuilder func(w http.ResponseWriter, req *http.Request, args Args) Ctx
 
 type Context struct {
-	ksatriya.Ctx
+	*ksatriya.Context
 	actions map[string]Action
 }
 
 func (ctx *Context) Actions() map[string]Action {
 	return ctx.actions
-}
-
-func convertContext(kctx ksatriya.Ctx) *Context {
-	ctx, _ := kctx.(*Context)
-	return ctx
 }
