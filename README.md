@@ -1,6 +1,6 @@
 # potto
 
-a framework to handle Slack Outgoing WebHooks for golang
+a tiny framework to handle Slack Outgoing WebHooks for golang
 
 ## Example
 
