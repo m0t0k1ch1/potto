@@ -14,7 +14,7 @@ import (
 )
 
 func Ping(ctx potto.Ctx, args potto.ActionArgs) (*potto.Response, error) {
-	return potto.NewResponse("potto"), nil
+	return potto.NewResponse("pong"), nil
 }
 
 func Say(ctx potto.Ctx, args potto.ActionArgs) (*potto.Response, error) {
