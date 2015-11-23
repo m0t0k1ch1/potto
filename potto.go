@@ -10,6 +10,8 @@ type Args struct {
 	ksatriya.Args
 }
 
+type HandlerFunc func(Ctx)
+
 type Action func(Ctx, ActionArgs) (*Response, error)
 type ActionArgs []string
 
@@ -21,6 +23,12 @@ type Potto struct {
 func (p *Potto) SetCtxBuilder(f CtxBuilder) {
 	p.Ksatriya.SetCtxBuilder(func(w http.ResponseWriter, req *http.Request, args ksatriya.Args) ksatriya.Ctx {
 		return f(w, req, Args{args})
+	})
+}
+
+func (p *Potto) AddRoute(method, path string, hf HandlerFunc) {
+	p.Ksatriya.AddRoute(method, path, func(kctx ksatriya.Ctx) {
+		hf(kctx.(Ctx))
 	})
 }
 
