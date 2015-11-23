@@ -1,5 +1,7 @@
 # potto
 
+[![GoDoc](https://godoc.org/github.com/m0t0k1ch1/potto?status.svg)](https://godoc.org/github.com/m0t0k1ch1/potto)
+
 a tiny framework to handle Slack Outgoing WebHooks for golang
 
 ## Example
