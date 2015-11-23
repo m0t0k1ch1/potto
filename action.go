@@ -18,16 +18,16 @@ func ActionHandler(kctx ksatriya.Ctx) {
 	action, ok := ctx.Actions()[cmd.Name]
 	if !ok {
 		log.Printf("unknown action name: %s", cmd.Name)
-		ctx.JSON(http.StatusOK, NewResponse("unknown action name"))
+		ctx.RenderJSON(http.StatusOK, NewResponse("unknown action name"))
 		return
 	}
 
 	res, err := action(ctx, cmd.Args)
 	if err != nil {
 		log.Println(err)
-		ctx.JSON(http.StatusOK, NewResponse(err.Error()))
+		ctx.RenderJSON(http.StatusOK, NewResponse(err.Error()))
 		return
 	}
 
-	ctx.JSON(http.StatusOK, res)
+	ctx.RenderJSON(http.StatusOK, res)
 }
