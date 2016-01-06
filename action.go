@@ -3,13 +3,9 @@ package potto
 import (
 	"log"
 	"net/http"
-
-	"github.com/m0t0k1ch1/ksatriya"
 )
 
-func ActionHandler(kctx ksatriya.Ctx) {
-	ctx := kctx.(Ctx)
-
+func ActionHandler(ctx Ctx) {
 	text := ctx.ParamSingle("text")
 	trigger := ctx.ParamSingle("trigger_word")
 

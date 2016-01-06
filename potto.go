@@ -56,7 +56,7 @@ func New() *Potto {
 	}
 
 	p.SetCtxBuilder(p.NewContext)
-	p.POST("/", ActionHandler)
+	p.AddRoute("POST", "/", ActionHandler)
 
 	return p
 }
